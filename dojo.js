@@ -1,6 +1,8 @@
 
 var tabScoreU1=[];
 var tabScoreU2=[];
+var L=0;
+var o=0;
 
 // Recuperation du canvas
 var c = document.getElementById("canvasMorpion");
@@ -116,21 +118,8 @@ function createRond(x,y)
 	ctx.stroke();
 }
 
-// Verification fin
-function end()
-{
-	for(var  i = 0 ; i < nbLignes ; i++)
-	{
-		for(var j = 0 ; j < nbColonnes ; j++)
-		{
-			if(coups[i][j] == false)
-			{
-				return false ;
-			}
-		}
-	}
-	return true ;
-}
+
+
 
 // Verification gagnant
 function gain(symbole,y,x) // on va chercher a verifier si il y a N symboles identiques alignés
@@ -243,6 +232,22 @@ function play(event)
 	var milieuX = caseX*largeurColonne + largeurColonne/2 ;
 	var milieuY = caseY*hauteurLigne + hauteurLigne/2 ;
 
+	// Verification fin
+	function end()
+{
+	for(var  i = 0 ; i < nbLignes ; i++)
+	{
+		for(var j = 0 ; j < nbColonnes ; j++)
+		{
+			if(coups[i][j] == false)
+			{
+				return false ;
+			}
+		}
+	}
+	return true ;
+}
+
 	if(jeu) // Si jeu en route
 	{
 		if(!coups[caseY][caseX]) // Si pas déjà quelque chose sur la meme case
@@ -270,14 +275,19 @@ function play(event)
 				{
 					document.getElementById("joueur").innerHTML = "Victoire pour le joueur rond !" ;
 					jeu = false ;
-					document.getElementById("rejouer").style.display = "initial";
-					tabScoreU1.push(x);
+					o++;
+					tabScoreU1.push(o);
+					//document.getElementById("rejouer").style.display = "initial";
+					afficheScore();
 				}
 				else
 				{
 					document.getElementById("joueur").innerHTML = "Victoire pour le joueur croix !" ;
 					jeu = false ;
-					document.getElementById("rejouer").style.display = "initial";
+					L++;
+					tabScoreU2.push(L);
+					//document.getElementById("rejouer").style.display = "initial";
+					afficheScore();
 				}
 			}
 			else
@@ -286,13 +296,14 @@ function play(event)
 				{
 					jeu = false ;
 					document.getElementById("joueur").innerHTML = "Terminé. Personne n'a gagné.";
-					document.getElementById("rejouer").style.display = "visible";
+					//document.getElementById("rejouer").style.display = "visible";
 				}
 			}
 		}
 	}
 
 }
+
 
 var startTime = 0
 var start = 0
@@ -365,7 +376,12 @@ function afficherU2(){
             Myutil.innerHTML = "Utilisateur numero 2 : " + Mynamet.value;
             }
 function afficheScore(){
-	tabScoreU1.lenght;
-	console.log();
+	var html='';
+	html +='<div>'+"le nombre de victoire du joueur X est :" + tabScoreU1.length + '</div>';
+	html +='<div>'+"le nombre de victoire du joueur O est :" + tabScoreU2.length + '</div>';
+	document.getElementById('score').innerHTML=html;
 }
+
+
+
 

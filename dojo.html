@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TD4</title>
+  <title>Projet Javascript</title>
+  <meta charset="UTF-8"/>
 </head>
 <link rel="stylesheet" href="dojo.css">
 <body>
@@ -13,7 +14,7 @@
                     <input type="button" name="reset" value="reset!" onClick="chronoReset()" />
             </form>
             <form>
-            	<div>
+            	<div><br>
                     <input id="caseU" type="text" name="name" value="" >
                         <button type="button" onclick="afficherU1()">Valider</button>
                             <p id="test1" >Utilisateur numero 1: </p>
@@ -24,8 +25,12 @@
                             <input id="caseU2" type="text" name="name" value="" >
                         <button type="button" onclick="afficherU2()">Valider</button>
                             <p id="test2" >Utilisateur numero 2: </p>
+                            <input type="button" onclick='document.location.reload(false)' value="Rafraichir"/>
+
                         </form>
                         </div>
+                        <div id="score"></div>
+
                 <br>
                 </div>
   <script src="dojo.js"></script>
