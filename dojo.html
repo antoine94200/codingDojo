@@ -3,30 +3,103 @@
 <head>
   <title>Projet Javascript</title>
   <meta charset="UTF-8"/>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/space-meatball" type="text/css"/>
+<style>
+	body {
+		background-color:#2D3938; 
+	}
+	#titre{
+		text-align: center;
+        font-family: 'SpaceMeatballRegular';
+       font-weight: normal;
+       font-style: normal;
+	}
+
+	#Regles{
+		text-align: center;
+        font-family: 'SpaceMeatballRegular';
+       font-weight: normal;
+       font-style: normal;
+	}
+
+	p {
+		text-align: center;
+        font-family: 'SpaceMeatballRegular';
+       font-weight: normal;
+       font-style: normal;
+	}
+
+	h3 {
+		text-align: center;
+        font-family: 'SpaceMeatballRegular';
+       font-weight: normal;
+       font-style: normal;
+	}
+
+	
+
+	.chrono{
+		margin-left: 850px;
+	}
+
+	#canvasMorpion {
+		margin-left: 700px;
+	}
+
+	footer {
+                  
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  height:5%;
+                  background-color: red;
+                  color: white;
+                  text-align: center;
+                    }
+    #caseU {
+    	margin-left: 850px;
+    }
+
+    #caseU2 {
+    	margin-left: 850px;
+    }
+
+    #refresh {
+    	margin-left: 870px;
+    }
+    
+</style>
 </head>
 <link rel="stylesheet" href="dojo.css">
 <body>
-  <canvas id="canvasMorpion" width="500" height="500" style="background-color:black;"></canvas>
-  <h3 id="joueur"> Au joueur de placer une croix </h3> 
+	<div>
+  
+</div>
+  <h1 id="titre">MORPION</h1>
+  <h2 id="Regles">Regles :</h2>
+  <p id="pregle">La partie s'effectue a deux joueurs, rentrez vos nom dans les champs et cliquez sur validez. Vous n'avez plus qu'a suivre les instructions. Le but de ce jeux est de reussir a aligner horizontelment, verticalement ou en diagonale une suite de votre symbol. Bonne chance ! 
+  <hr></p>
+  <canvas id="canvasMorpion" width="500" height="500" style="background-color:#2D3938; "></canvas>
+  <h3 id="joueur"> Au joueur de placer une croix </h3><br>
   	<form class="chrono" name="chronoForm">
                     <input type="text" name="chronotime" id="chronotime" value="0:00:00:00"/>
                     <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
                     <input type="button" name="reset" value="reset!" onClick="chronoReset()" />
             </form>
-            <form>
-            	<div><br>
+            
+            	<br><div>
+            		<form>
                     <input id="caseU" type="text" name="name" value="" >
                         <button type="button" onclick="afficherU1()">Valider</button>
-                            <p id="test1" >Utilisateur numero 1: </p>
-                        </form>
-                        </div>
-                        <div>
-                        	<form>
-                            <input id="caseU2" type="text" name="name" value="" >
-                        <button type="button" onclick="afficherU2()">Valider</button>
+                         <p id="test1" >Utilisateur numero 1: </p>   
+                       	<input id="caseU2" type="text" name="name" value="" >
+                        	<button type="button" onclick="afficherU2()">Valider</button>
                             <p id="test2" >Utilisateur numero 2: </p>
-                            <input type="button" onclick='document.location.reload(false)' value="Rafraichir"/>
-
+                            <hr>
+                            <input id="refresh" type="button" onclick='document.location.reload(false)' value="Rafraichir"/>
+                            <input type="button" onclick="nouvellePartie()" value="rejouer"/>
+                            
+                            
                         </form>
                         </div>
                         <div id="score"></div>
@@ -35,7 +108,9 @@
                 </div>
   <script src="dojo.js"></script>
 </body>
-
+ <footer>
+        <p class="footer">Morpion by Antoine, Teddy, Jeremy</p>
+    </footer>
   
 
 </html>

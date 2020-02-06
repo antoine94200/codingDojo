@@ -382,6 +382,15 @@ function afficheScore(){
 	document.getElementById('score').innerHTML=html;
 }
 
+/*function nouvellePartie(){
+	localStorage.setItem('key', tabScoreU1);
+	localStorage.setItem('key', tabScoreU2);
+
+	localStorage.setItem('items', JSON.stringify(tabScoreU1))
+const data = JSON.parse(localStorage.getItem('items'))
+
+}*/
+
 
 
 
