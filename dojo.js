@@ -248,10 +248,19 @@ function play(event)
 	return true ;
 }
 
+
+
+if (document.getElementById("caseU").value != 0 && document.getElementById("caseU2").value !=0 ){
+
+	chronoStart() 
 	if(jeu) // Si jeu en route
+
 	{
-		if(!coups[caseY][caseX]) // Si pas déjà quelque chose sur la meme case
+		
+
+			if(!coups[caseY][caseX]) // Si pas déjà quelque chose sur la meme case
 		{
+			
 			if(joueurActuel)
 			{
 				createCroix(milieuX,milieuY);
@@ -266,11 +275,13 @@ function play(event)
 				var temp = "rond";
 				document.getElementById("joueur").innerHTML = "Au joueur de placer une croix";
 			}
+		}
 
 			joueurActuel = !joueurActuel ;
 
 			if(gain(temp,caseY,caseX))
 			{
+				
 				if(joueurActuel)
 				{
 					document.getElementById("joueur").innerHTML = "Victoire pour le joueur rond !" ;
@@ -290,6 +301,7 @@ function play(event)
 					afficheScore();
 				}
 			}
+		
 			else
 			{
 				if(end())
