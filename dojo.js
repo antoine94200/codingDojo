@@ -3,6 +3,7 @@ var tabScoreU1=[];
 var tabScoreU2=[];
 var L=0;
 var o=0;
+const sound = new Audio("le-bruit-du-temps.mp3");
 
 // Recuperation du canvas
 var c = document.getElementById("canvasMorpion");
@@ -253,6 +254,7 @@ function play(event)
 if (document.getElementById("caseU").value != 0 && document.getElementById("caseU2").value !=0 ){
 
 	chronoStart() 
+	sound.play();
 	if(jeu) // Si jeu en route
 
 	{
@@ -290,6 +292,7 @@ if (document.getElementById("caseU").value != 0 && document.getElementById("case
 					tabScoreU1.push(o);
 					//document.getElementById("rejouer").style.display = "initial";
 					afficheScore();
+					sound.pause();
 				}
 				else
 				{
@@ -299,6 +302,7 @@ if (document.getElementById("caseU").value != 0 && document.getElementById("case
 					tabScoreU2.push(L);
 					//document.getElementById("rejouer").style.display = "initial";
 					afficheScore();
+					sound.pause();
 				}
 			}
 		
@@ -315,6 +319,7 @@ if (document.getElementById("caseU").value != 0 && document.getElementById("case
 	}
 
 }
+//chrono();
 
 
 var startTime = 0
