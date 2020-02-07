@@ -39,11 +39,11 @@
 	
 
 	.chrono{
-		margin-left: 850px;
+		margin-left: 600px;
 	}
 
 	#canvasMorpion {
-		margin-left: 700px;
+		margin-left: 450px;
 	}
 
 	footer {
@@ -57,15 +57,24 @@
                   text-align: center;
                     }
     #caseU {
-    	margin-left: 850px;
+    	margin-left: 600px;
     }
 
     #caseU2 {
-    	margin-left: 850px;
+    	margin-left: 600px;
     }
 
-    #refresh {
-    	margin-left: 870px;
+    
+
+    #score {
+    	margin-left: 600px;
+    	font-family: 'SpaceMeatballRegular';
+       font-weight: normal;
+       font-style: normal;
+    }
+
+    #button {
+    	margin-left: 630px;
     }
     
 </style>
@@ -96,12 +105,14 @@
                         	<button type="button" onclick="afficherU2()">Valider</button>
                             <p id="test2" >Utilisateur numero 2: </p>
                             <hr>
+                            <div id="button">
                             <input id="refresh" type="button" onclick='document.location.reload(false)' value="Rafraichir"/>
                             <input type="button" onclick="nouvellePartie()" value="rejouer"/>
-                            
+                            </div>
                             
                         </form>
                         </div>
+                        <br>
                         <div id="score"></div>
 
                 <br>

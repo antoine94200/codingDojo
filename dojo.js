@@ -377,8 +377,9 @@ function afficherU2(){
             }
 function afficheScore(){
 	var html='';
-	html +='<div>'+"le nombre de victoire du joueur X est :" + tabScoreU1.length + '</div>';
-	html +='<div>'+"le nombre de victoire du joueur O est :" + tabScoreU2.length + '</div>';
+	html +='<div>'+"le score des croix est :" + tabScoreU2.length + '</div>';
+	html +='<br>';
+	html +='<div>'+"le score des ronds est :" + tabScoreU1.length + '</div>';
 	document.getElementById('score').innerHTML=html;
 }
 
